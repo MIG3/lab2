@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример 1</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .minimized
+        {
+            width: 150px;
+            cursor: pointer;
+            border: 1px solid #FFF;
+            margin-right: 20px;
+        }
+        body
+        {
+            margin: 0;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        label
+        {
+            width: 150px;
+        }
+        .site-task
+        {
+            width: 550px;
+            background: #f0ffad;
+            border-radius: 20px;
+            margin: 10px;
+        }
+        input[type="text"]
+        {
+            width: 100%;
+            padding: 10px 15px;
+            border-width: 10px;
+            background: #e6e6e6;
+            outline: none;
+            margin: 0;
+        }
+        @media (max-width: 600px)
+        {
+            body {display: block}
+            .form-wrap {margin: 20px auto; max-width: 550px; width:100%}
+            .profile, form {float: none; width: 100%}
+            h1 {margin-top: auto; padding-bottom: 50px;}
+            form {border-radius: 0 0 20px 20px
+            }
+        }
+        button
+        {
+            padding: 10px 0;
+            border-width: 0;
+            display: block;
+            width: 120px;
+            margin: 35px auto 10px 30px;
+            background: #60e6c5;
+            color: black;
+            font-size: 14px;
+            outline: none;
+            text-transform: uppercase;
+        }
+        label{
+            margin: 20px;
+        }
+        input
+        {
+            margin: 10px;
+        }
+        h3{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="site-task">
+    <div class="logo_image">
+        <img src="scho-znachit-rr-vp-v-grah_2.jpeg" class="minimized" align="right">
+        <h3>Вход</h3>
+    </div>
+        <label for="login">Логин</label>
+        <input type="number" id="login" name="one" placeholder="" class="site-task__input"/><br />
+        <label for="password">Пароль</label>
+        <input type="number" id="password" name="two" placeholder="" class="site-task__input"/><br />
+        <button class="site-task__button" name="button">Войти</button>
+</div>
+
+<script>
+    var button = (document.getElementsByName('button')[0]);
+    var elem1 = (document.getElementsByName('one')[0]);
+    var elem2 = (document.getElementsByName('two')[0]);
+    $("#password").focusin(function () { $(this).css("background","#acffff");});
+    $("#login").focusin(function () { $(this).css("background","#acffff");});
+    button.onclick = function()
+    {
+        var log = elem1.value, pas = elem2.value;
+        if (pas.length < 8)
+        {
+            $("#password").css("background","red");
+            alert("Пароль должен быть не менее 8 символов.");
+        }
+        else
+        {
+            document.location.href = "Пример2.html";
+        }
+
+    }
+</script>
+
+</body>
+</html>
